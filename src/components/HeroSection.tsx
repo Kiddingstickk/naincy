@@ -31,7 +31,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isVisible }) => {
           <p className="text-xl md:text-2xl text-green-700 font-inter font-light leading-relaxed max-w-2xl mx-auto">
             You once said you've never met a guy with green flags...
             <br />
-            <span className="font-medium text-green-800">So I made you a whole world of them.</span>
+            <span className="font-medium text-green-800">So this is my application to be the first .</span>
           </p>
         </div>
 
