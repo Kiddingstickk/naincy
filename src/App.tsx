@@ -54,7 +54,7 @@ function App() {
         {/* Footer */}
         <footer className="py-16 text-center">
           <p className="text-green-600 font-inter font-light text-lg">
-            Made with 💚 for someone who deserves all the green flags
+            Made with 💚 for someone who deserves all the green flags, also sorry it's so short 😭😭.
           </p>
         </footer>
       </div>
