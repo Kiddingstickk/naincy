@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import ChooseALeafGame from './components/ChooseALeafGame';
 import MicroJournal from './components/MicroJournal';
 import EasterEgg from './components/EasterEgg';
+import BackgroundAudio from './components/bgmusic';
 
 function App() {
   const [showHero, setShowHero] = useState(true);
@@ -30,6 +31,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-green-25 via-white to-green-50 relative overflow-x-hidden">
       {/* Floating Leaves Background */}
       <FloatingLeaves />
+      <BackgroundAudio/>
       
       {/* Hero Section */}
       <HeroSection isVisible={showHero} />
