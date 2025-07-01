@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const BackgroundMusic: React.FC = () => {
+const BackgroundMusic = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -8,10 +8,12 @@ const BackgroundMusic: React.FC = () => {
       const audio = audioRef.current;
       if (audio && audio.paused) {
         audio.volume = 0.25;
-        audio.play();
+        audio.play().catch((err) => {
+          console.warn("Autoplay blocked. Will wait for further interaction:", err);
+        });
       }
 
-      // Remove after first trigger
+      // Only fire once
       window.removeEventListener('click', handleInteraction);
       window.removeEventListener('scroll', handleInteraction);
     };
