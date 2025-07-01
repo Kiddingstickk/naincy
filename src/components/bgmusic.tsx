@@ -1,17 +1,28 @@
 import { useEffect, useRef } from 'react';
 
-const BackgroundAudio = () => {
+const BackgroundMusic: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    const audio = audioRef.current;
-    if (audio) {
-      audio.volume = 0.3; // Soft background
-      audio.play().catch((e) => {
-        // Browser blocked autoplay — you could prompt to start music
-        console.warn("Autoplay prevented:", e);
-      });
-    }
+    const handleInteraction = () => {
+      const audio = audioRef.current;
+      if (audio && audio.paused) {
+        audio.volume = 0.25;
+        audio.play();
+      }
+
+      // Remove after first trigger
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('scroll', handleInteraction);
+    };
+
+    window.addEventListener('click', handleInteraction);
+    window.addEventListener('scroll', handleInteraction);
+
+    return () => {
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('scroll', handleInteraction);
+    };
   }, []);
 
   return (
@@ -19,4 +30,4 @@ const BackgroundAudio = () => {
   );
 };
 
-export default BackgroundAudio;
+export default BackgroundMusic;
