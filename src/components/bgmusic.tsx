@@ -36,7 +36,7 @@ const BackgroundMusic = () => {
       
       {!hasInteracted && (
         <div className="fixed bottom-6 right-6 bg-white/90 px-4 py-2 rounded-lg shadow-md backdrop-blur-md text-green-700 text-sm animate-fade-in z-50">
-          🎶 Tap or scroll to start music
+          🎶 Tap to start music
         </div>
       )}
     </>
